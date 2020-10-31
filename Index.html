@@ -70,24 +70,44 @@
 
             <div class="mb-3">
                 <label for="datetimepicker">วันรับฝากพัสดุ</label>
-                <input type="datetimepicker" class="form-control" id="datetimepicker" placeholder="2020-10-30">
+                <input type="datetimepicker" class="form-control" id="datetimepicker" placeholder="2020-11-01">
                 <div class="invalid-feedback">
                   Please enter your phone number.
                 </div>
-              </div>  
+            </div>  
+
+            <div class="row">
+                <div class="col-md-5 mb-3">
+                  <label for="itemtype">ประเภท</label>
+                  <select class="custom-select d-block w-100" id="itemtype" required>
+                    <option selected="selected">พัสดุไปรษณีย์</option>
+                    <option value="">จดหมาย</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Please select a valid item.
+                  </div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="provider">บริการขนส่ง <span class="text-muted">(Optional)</span></label>
+                <input type="provider" class="form-control" id="provider" placeholder="ไปรษณีย์ไทย">
+                <div class="invalid-feedback">
+                  Please enter a valid service provider.
+                </div>
+              </div>
 
             <div class="row">
               <div class="col-md-5 mb-3">
                 <label for="item">จำนวน</label>
                 <select class="custom-select d-block w-100" id="item" required>
                   <option value="">Choose...</option>
-                  <option>1</option>
+                  <option selected="selected">1</option>
                 </select>
                 <div class="invalid-feedback">
                   Please select a valid item.
                 </div>
               </div>
-   
             </div>
             <hr class="mb-4">
             <button class="btn btn-primary btn-lg btn-block" type="submit">เพิ่มรายการ</button>
