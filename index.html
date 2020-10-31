@@ -1,92 +1,202 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
-  <title>My LIFF app</title>
-  <link rel="stylesheet" href="css/style.css" media="all">
-</head>
-<body>
-  <p id="os"><b>OS:</b> </p>
-  <p id="language"><b>Language:</b> </p>
-  <p id="version"><b>Version:</b> </p>
-  <p id="isInClient"><b>isInClient:</b> </p>
-  <p id="accessToken"><b>AccessToken:</b> </p>
-  <img id="pictureUrl">
-  <p id="userId"><b>userId:</b> </p>
-  <p id="displayName"><b>displayName:</b> </p>
-  <p id="statusMessage"><b>statusMessage:</b> </p>
-  <p id="decodedIDToken"><b>email:</b> </p>
-  <p id="type"><b>type:</b> </p>
-  <p id="viewType"><b>viewType:</b> </p>
-  <p id="utouId"><b>utouId:</b> </p>
-  <p id="roomId"><b>roomId:</b> </p>
-  <p id="groupId"><b>groupId:</b> </p>
-  <p id="friendship"><b>isFriendship:</b> </p>
-  <p id="scanCode"><b>Code:</b> </p>
-  <p id="isLoggedIn"><b>isLoggedIn:</b> </p>
-  <p id="universalLink1"><b>Universal Link:</b> </p>
-  <p id="universalLink2"><b>Universal Link with Query params:</b> </p>
-  <p><a href="liff/path/?param=9">Link to Path</a></p>
 
-  <button id="btnMsg" onclick="sendMsg()">Send Message</button>
-  <button id="btnShare" onclick="shareMsg()">Share Target Picker</button>
-  <button onclick="openWindow()">Open Window</button>
-  <button id="btnScanCode" onclick="scanCode()">Scan Code</button>
-  <button id="btnLogOut" onclick="logOut()">Log Out</button>
-  <button id="btnClose" onclick="closed()">Close</button>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
 
-  <!-- <script src="js/vconsole.min.js"></script> -->
-  <!-- <script>
-    var vConsole = new VConsole()
-    console.log("Hello World!")
-  </script> -->
+    <title>Checkout example for Bootstrap</title>
 
-  <!-- <script src="https://static.line-scdn.net/liff/edge/versions/2.4.1/sdk.js"></script> -->
-  <script>
-    function createUniversalLink() {
-    }
+    <link href="https://fonts.googleapis.com/css?family=Kanit&display=swap" rel="stylesheet">
 
-    async function shareMsg() {
-    }
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/checkout/">
 
-    function logOut() {
-    }
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    function closed() {
-    }
+    <!-- Custom styles for this template -->
+    <link href="form-validation.css" rel="stylesheet">
 
-    async function scanCode() {
-    }
+    <style>
+		body {
+		  font-family: 'Kanit', sans-serif;
+		}
+		h1 {
+		  font-family: 'Kanit', sans-serif;
+		}
+    </style>
+  </head>
 
-    function openWindow() {
-    }
+  <body class="bg-light">
 
-    async function getFriendship() {
-    }
+    <div class="container">
+      <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+        <h2>ระบบการบริหารจัดการรับฝากจดหมาย/พัสดุไปรษณีย์</h2>
+        <!-- <p class="lead">ระบบการบริหารจัดการรับฝากจดหมาย/พัสดุไปรษณีย์</p> -->
+      </div>
 
-    async function sendMsg() {
-    }
+      <div class="row justify-content-md-center">
+        <div class="col-md-8 order-md-1">
+          <h4 class="mb-3">ลงรับจดหมาย/พัสดุไปรษณีย์</h4>
+          <form class="needs-validation" novalidate>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="firstName">ชื่อ</label>
+                <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="lastName">นามสกุล</label>
+                <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  Valid last name is required.
+                </div>
+              </div>
+            </div>
 
-    function getContext() {
-    }
+            <div class="mb-3">
+              <label for="phone">หมายเลขโทรศัพท์</label>
+              <input type="phone" class="form-control" id="phone" placeholder="">
+              <div class="invalid-feedback">
+                Please enter your phone number.
+              </div>
+            </div>
 
-    async function getUserProfile() {
-    }
+            <div class="mb-3">
+                <label for="datetimepicker">วันรับฝากพัสดุ</label>
+                <input type="datetimepicker" class="form-control" id="datetimepicker" placeholder="2020-11-01">
+                <div class="invalid-feedback">
+                  Please enter your phone number.
+                </div>
+            </div>  
 
-    function getEnvironment() {
-    }
+            <div class="row">
+                <div class="col-md-5 mb-3">
+                  <label for="itemtype">ประเภท</label>
+                  <select class="custom-select d-block w-100" id="itemtype" required>
+                    <option selected="selected">พัสดุไปรษณีย์</option>
+                    <option value="">จดหมาย</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Please select a valid item.
+                  </div>
+                </div>
+            </div>
 
-    async function main() {
-      alert("LINE Developers x Skooldio")
-      await liff.init({ liffId: "YOUR-LIFF-ID" })
-      // getEnvironment()
-      // getUserProfile()
-      // getContext()
-      // getFriendship()
-      // createUniversalLink()
-    }
-    main()
-  </script>
-</body>
+            <div class="mb-3">
+                <label for="provider">บริการขนส่ง <span class="text-muted">(Optional)</span></label>
+                <input type="provider" class="form-control" id="provider" placeholder="ไปรษณีย์ไทย">
+                <div class="invalid-feedback">
+                  Please enter a valid service provider.
+                </div>
+              </div>
+
+            <div class="row">
+              <div class="col-md-5 mb-3">
+                <label for="item">จำนวน</label>
+                <select class="custom-select d-block w-100" id="item" required>
+                  <option value="">Choose...</option>
+                  <option selected="selected">1</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please select a valid item.
+                </div>
+              </div>
+            </div>
+            <hr class="mb-4">
+            <button class="btn btn-primary btn-lg btn-block" type="submit">เพิ่มรายการ</button>
+          </form>
+        </div>
+      </div>
+
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2020 - วิทยาลัยการชลประทาน กรมชลประทาน</p>
+      </footer>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/vendor/holder.min.js"></script>
+    <script>  
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function() {
+        'use strict';
+
+        window.addEventListener('load', function() {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+
+      $(function () {
+   var bindDatePicker = function() {
+		$(".date").datetimepicker({
+        format:'YYYY-MM-DD',
+			icons: {
+				time: "fa fa-clock-o",
+				date: "fa fa-calendar",
+				up: "fa fa-arrow-up",
+				down: "fa fa-arrow-down"
+			}
+		}).find('input:first').on("blur",function () {
+			// check if the date is correct. We can accept dd-mm-yyyy and yyyy-mm-dd.
+			// update the format if it's yyyy-mm-dd
+			var date = parseDate($(this).val());
+
+			if (! isValidDate(date)) {
+				//create date based on momentjs (we have that)
+				date = moment().format('YYYY-MM-DD');
+			}
+
+			$(this).val(date);
+		});
+	}
+   
+   var isValidDate = function(value, format) {
+		format = format || false;
+		// lets parse the date to the best of our knowledge
+		if (format) {
+			value = parseDate(value);
+		}
+
+		var timestamp = Date.parse(value);
+
+		return isNaN(timestamp) == false;
+   }
+   
+   var parseDate = function(value) {
+		var m = value.match(/^(\d{1,2})(\/|-)?(\d{1,2})(\/|-)?(\d{4})$/);
+		if (m)
+			value = m[5] + '-' + ("00" + m[3]).slice(-2) + '-' + ("00" + m[1]).slice(-2);
+
+		return value;
+   }
+   
+   bindDatePicker();
+ });
+    </script>
+
+  </body>
 </html>
